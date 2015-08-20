@@ -12,3 +12,6 @@ my all conding
     angular-resource,
     angular-sanitize,
     angular-touch
+    
+    
+2015-08-20添加自定义AJAX类request.js

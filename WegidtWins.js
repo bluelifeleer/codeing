@@ -85,9 +85,9 @@ WegidtWins.prototype.create = function(title,text){
         '<style>'+
         '.wegidt-top-box{width:100%;height:40px;background:'+this.bgColor+';overflow:hidden;}'+
         '.wegidt-top-text{display:inline-block;float:left;width:'+parseInt(this.width-130)+'px;height:40px;line-height:40px;color:#FFF;font-size:15px;padding-left:10px;}'+
-        '.wegidt-shrink-but{display:inline-block;float:right;width:20px;height:20px;line-height:40px;text-align:center;color:#FFF;font-size:18px;font-weight:bold;text-decoration:none;background:url("./public/image/wegidt_window_but_ico.png") no-repeat 5px 5px;margin-top:10px;}'+
-        '.wegidt-enlarge-but{display:inline-block;float:right;width:20px;height:20px;line-height:40px;text-align:center;color:#FFF;font-size:18px;font-weight:bold;text-decoration:none;background:url("./public/image/wegidt_window_but_ico.png") no-repeat -10px 5px;margin-top:10px;}'+
-        '.wegidt-colse-but{display:inline-block;float:right;width:20px;height:20px;line-height:40px;text-align:center;color:#FFF;font-size:18px;font-weight:bold;text-decoration:none;background:url("./public/image/wegidt_window_but_ico.png") no-repeat -28px 5px;margin-top:10px;}'+
+        '.wegidt-shrink-but{display:inline-block;float:right;width:20px;height:20px;line-height:40px;text-align:center;color:#FFF;font-size:18px;font-weight:bold;text-decoration:none;background:url("http://localhost/public/image/wegidt_window_but_ico.png") no-repeat 5px 5px;margin-top:10px;}'+
+        '.wegidt-enlarge-but{display:inline-block;float:right;width:20px;height:20px;line-height:40px;text-align:center;color:#FFF;font-size:18px;font-weight:bold;text-decoration:none;background:url("http://localhost/public/image/wegidt_window_but_ico.png") no-repeat -10px 5px;margin-top:10px;}'+
+        '.wegidt-colse-but{display:inline-block;float:right;width:20px;height:20px;line-height:40px;text-align:center;color:#FFF;font-size:18px;font-weight:bold;text-decoration:none;background:url("http://localhost/public/image/wegidt_window_but_ico.png") no-repeat -28px 5px;margin-top:10px;}'+
         '</style>';
     document.body.appendChild(this.mesgLayer);
     this.footer = document.createElement("div");
