@@ -1,3 +1,21 @@
+/**
+ *	自定义AJAX 
+ * 		GET方法:re.get(url,function(result){codeing....},[async],[contentType],[resultType]) 
+ * 		POST方法:re.post(url,data,function(result){codeing....},[async],[contentType],[resultType]) 
+ * 		注：如果设置resultType时，也应该设置async，contentType，resultType这三个值，如无需设置请用''(空字符串代替)
+ *	parameters:
+ * 		url:string					//请求地址[必需]
+ * 		callBack:function				//请求成功时的回调函数[必需]
+ * 		data:json					//POST提交时，数据类型为JSON[当请求为post提交时必需，为get时可选]
+ * 		async:boolean					//是否异步，默认(true:异步),可选，否(false:同步)[可选]
+ * 		contentType:string				//请求头类型(对提交数据进行编码)，默认('application/x-www-form-urlencoded');[可选]
+ * 			值：application/x-www-form-urlencoded	//在发送前编码所有字符（默认）
+ *			　　multipart/form-data			//不对字符编码。在使用包含文件上传控件的表单时，必须使用该值。
+ *			　　text/plain				//空格转换为 "+" 加号，但不对特殊字符编码。
+ * 		resultType:string				//返回值类型，默认(text)，值：text,xml,josn[可选]
+ *      return:
+ * 		请求成功时返回的数据
+ */
 function requestFn(){
 	this.options = {
 		"active":['MSXML2.XMLHTTP30.','MSXML2.XMLHTTP','Microsoft.XMLHTTP'],
