@@ -5,10 +5,10 @@
  * 取十六进制颜色字符串的每两位取一次，用取到的两位值中的第一位在颜色中对应的值乘以１６加上第二位上的数字在颜色中对应的值便是当前两位代表的rgb中的一种颜色，
  * @param hex color string
  * @return rgbString
- * $using HexToRgb(hstr);
- * date 2015-10-27
- * author bluelife
- * email thebulelife@163.com
+ * @using HexToRgb(hstr);
+ * @date 2015-10-27
+ * @author bluelife
+ * @email thebulelife@163.com
  */
 var hexColorStr = "#ccc";		//hex color string
 var rgb = HexToRgb(hexColorStr);	//return rgbstring
