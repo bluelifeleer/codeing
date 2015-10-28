@@ -3,6 +3,12 @@
  * 弹出层 2015-05-05 17:28
  * 使用方法：var maskpop = new maskPopup(json);
  * maskpop.createBox("title","text");
+ * json = {
+ *  "width":int
+ *  "height":int
+ *  "background":""
+ *  "border-color":""
+ * }
  */
 
 function maskPopup(){
