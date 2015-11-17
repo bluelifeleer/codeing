@@ -1,7 +1,7 @@
 /**
- *	@fn_name selfStorage()
+ *	@fn_name browserStorage()
  *	@param string:type 	要设置的类型，有：session(sessionStorage),local(localStorage),cookie(cookie)，默认为cookie可以不写;
- *	@using var oStorage = new selfStorage(type);
+ *	@using var oStorage = new browserStorage(type);
  *	@set oStorage.set(key,value);	//设置
  *	@get oStorage.get(key);			//获取
  *	@remove oStorage.remove(key);	//删除
@@ -16,7 +16,7 @@
 
 
 
-function selfStorage(type){
+function browserStorage(type){
 	this.storage = null;
 	this.isCookie = false;
 	switch(type){
@@ -46,7 +46,7 @@ function selfStorage(type){
 	return this;
 }
 
-selfStorage.prototype.set = function(key,value){
+browserStorage.prototype.set = function(key,value){
 	if(!this.isCookie){
 		this.storage.setItem(key,value);
 	}else{
@@ -57,7 +57,7 @@ selfStorage.prototype.set = function(key,value){
 		//console.log(key+"="+value+"; expires="+date.toGMTString());
 	}
 }
-selfStorage.prototype.get = function(key){
+browserStorage.prototype.get = function(key){
 	if(!this.isCookie){
 		return this.storage.getItem(key);
 	}else{
@@ -74,7 +74,7 @@ selfStorage.prototype.get = function(key){
 	}
 	
 }
-selfStorage.prototype.remove = function(key){
+browserStorage.prototype.remove = function(key){
 	if(!this.isCookie){
 		this.storage.removeItem(key);
 	}else{
@@ -101,7 +101,7 @@ selfStorage.prototype.remove = function(key){
 	}
 	
 }
-selfStorage.prototype.getAll = function(){
+browserStorage.prototype.getAll = function(){
 	if(!this.isCookie){
 		return this.storage;
 	}else{
@@ -117,7 +117,7 @@ selfStorage.prototype.getAll = function(){
 	}
 	
 }
-selfStorage.prototype.clear = function(){
+browserStorage.prototype.clear = function(){
 	if(!this.isCookie){
 		this.storage.clear();
 	}else{
