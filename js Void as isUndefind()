@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="COntent-Type" content="text/html; charset=utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<div id="block-box"></div>
+		<script type="text/javascript">
+			(function(){
+				function isUndefind(obj){
+					return obj === void 0 ? true : false;
+					//void:是一个操作符，用于对表达式求值，并返回 undefined
+					//用void的好处，因为undefin不是js中的一个保留字，可以为undefin赋值，而void操作符后面不管是什么表达式都会返回undefind,所以这种方法处理undefind更好。
+				}
+				var block = document.getElementById('block-box');
+				if(isUndefind(block)){
+					alert(true);
+				}else{
+					alert(false);
+				}
+			})()
+		</script>
+	</body>
+</html>
