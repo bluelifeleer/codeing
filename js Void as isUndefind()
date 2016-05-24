@@ -8,6 +8,14 @@
 		<div id="block-box"></div>
 		<script type="text/javascript">
 			(function(){
+				/**
+				 *     isUndefind()判断一个对象是否是undefind
+				 *     @param [object] object [要判断的对象]
+				 *     @return [boolean] boolean [返回布尔值true/false]
+				 *     @author bluelife
+				 *     @email thebulelife@163|outlook.com
+				 *     @date 2016-05-24
+				 */
 				function isUndefind(obj){
 					return obj === void 0 ? true : false;
 					//void:是一个操作符，用于对表达式求值，并返回 undefined
