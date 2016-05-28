@@ -138,11 +138,11 @@ GYJQuery.prototype.html = function(){
     if(arguments.length == 1){
         for(var i=0; i<this.elements.length; i++){
             this.elements[i].innerHTML = arguments[0];
+    	    return this;
         }
     }else{
         return this.elements[0].innerHTML;
     }
-    return this;
 }
 /**
  * 获取或设置元素的自定义属性，如果是一个参数是字符串时表示获取指定的属性名称，如果是json表示设置自定义属性，如果是两个参数表示设置自定义属性
