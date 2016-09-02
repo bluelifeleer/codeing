@@ -1,0 +1,19 @@
+/**
+ *  为IE5、IE6、IE7、IE8添加forEach方法，完全兼容标准浏览器下的array.forEach();
+ *  @author buleife
+ *  @email thebulelife@163||outlook.com
+ *  @date 2016-09-02
+ */
+if(Array.forEach == void 0 || !Array.forEach || Array.forEach == null){
+  Array.prototype.forEach = function(callback){
+    for(var i=0;i<this.length;i++){
+      callback.call(window,this[i]);
+    }
+  }
+}
+
+var test = [111,222,333,444,555]
+// console.log(test.forEach);
+test.forEach(function(index){
+	alert(this);
+});
