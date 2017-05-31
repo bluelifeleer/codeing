@@ -53,7 +53,7 @@ browserStorage.prototype.set = function(key,value){
 		var day = 7;
 		var date = new Date();
 		date.setTime(date.getTime()+day*(1000*60*60*24));
-		this.storage = key+"="+value+"; expires="+date.toGMTString();
+		this.storage = key+"="+value+"; path=/; expires="+date.toGMTString();
 		//console.log(key+"="+value+"; expires="+date.toGMTString());
 	}
 }
@@ -61,16 +61,12 @@ browserStorage.prototype.get = function(key){
 	if(!this.isCookie){
 		return this.storage.getItem(key);
 	}else{
-		var temp = "";
-		var jsonStr = "";
-		var strToArr = this.storage.split(' ');
-		for(var i=0; i<strToArr.length; i++){
-			temp+= strToArr[i].substr(0,strToArr[i].length-1).replace(/=/,'":"')+'","';
-		}
-		jsonStr = '{"'+temp.substr(0,temp.length-2)+"}";
-		jsonStrToObject = eval("("+jsonStr+")");
-		return jsonStrToObject[key];
-
+		var arr, reg = new RegExp("(^| )" + key + "=([^;]*)(;|$)");
+                    if (arr = document.cookie.match(reg)){
+                        return arr[2];
+		    }else{
+                        return null;
+		    }
 	}
 	
 }
