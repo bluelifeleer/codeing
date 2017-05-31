@@ -54,7 +54,6 @@ browserStorage.prototype.set = function(key,value){
 		var date = new Date();
 		date.setTime(date.getTime()+day*(1000*60*60*24));
 		this.storage = key+"="+value+"; path=/; expires="+date.toGMTString();
-		//console.log(key+"="+value+"; expires="+date.toGMTString());
 	}
 }
 browserStorage.prototype.get = function(key){
@@ -62,11 +61,11 @@ browserStorage.prototype.get = function(key){
 		return this.storage.getItem(key);
 	}else{
 		var arr, reg = new RegExp("(^| )" + key + "=([^;]*)(;|$)");
-                    if (arr = document.cookie.match(reg)){
-                        return arr[2];
-		    }else{
-                        return null;
-		    }
+                if (arr = document.cookie.match(reg)){
+                    return arr[2];
+		}else{
+                    return null;
+		}
 	}
 	
 }
@@ -92,7 +91,7 @@ browserStorage.prototype.remove = function(key){
 		var day = 7;
 		var date = new Date();
 		date.setTime(date.getTime()+day*(1000*60*60*24));
-		this.storage = jsonToStr+"expires="+date.toGMTString();
+		this.storage = jsonToStr+"path=/;expires="+date.toGMTString();
 		//console.log(jsonToStr+"expires="+date.toGMTString());
 	}
 	
