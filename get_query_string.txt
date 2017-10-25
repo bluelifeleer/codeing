@@ -1,0 +1,27 @@
+<script	type="text/javascript">
+	function getQueryString(name){
+		var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if(r!=null){
+			return  unescape(r[2]);
+		}else{
+			return null;
+		}
+	}
+</script>
+
+
+
+<?php
+	function get_url_params($url){
+	 	$tmp = array();
+	 	$matchs = null;
+	 	$mr     = preg_match_all('/(\?|&)(.+?)=([^&?]*)/i', $url, $matchs);
+	    if ($mr !== false) {
+	        for ($i = 0; $i < $mr; $i++) {
+	            $tmp[$matchs[2][$i]] = $matchs[3][$i];
+	        }
+	    }
+	    return $tmp;
+	 }
+?>
